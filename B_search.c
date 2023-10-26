@@ -82,3 +82,33 @@ int main() {
     
     return 0;
 }
+
+
+//FINDING LAST OCCURENCE INDEX OF AN ELEMENT IN AN ARRAY
+#include <iostream>
+using namespace std;
+
+int b_search(int *a,int n,int l,int h,int val)
+{
+    int res=-1;
+    while(l<=h)
+    {
+        int mid=(l+h)/2;
+        if(a[mid]==val){res= mid;l=mid+1;}
+        else if(a[mid]>val){h=mid-1;}
+        else{l=mid+1;}
+    }
+    return res;
+    
+}
+int main() {
+    int arr[]={1,2,2,2,3,5,6};
+    int val=2;
+    int n=sizeof(arr)/sizeof(arr[0]);
+    int index=b_search(arr,n,0,n-1,val);
+    cout<<"Last occurence of index is "<<index<<endl;
+    cout<<index;
+   
+    
+    return 0;
+}
