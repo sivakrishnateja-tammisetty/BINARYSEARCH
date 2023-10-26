@@ -1,3 +1,5 @@
+SEARCHING:It is a method,that can be used to search an useful information from sorted data set.
+BINARY SEARCH:is an algorithm that can be used to search an element in sorted dataset.
 #include<stdio.h>
 void swap(int *a,int n)
 {
