@@ -52,3 +52,33 @@ int main()
         b_search(arr,len,key,low,high);
 	return 0;
 }
+
+
+
+//USING RECURSION
+#include <iostream>
+using namespace std;
+
+int b_search(int *a,int n,int l,int h,int val)
+{
+    while(l<=h)
+    {
+        int mid=(l+h)/2;
+        if(a[mid]==val){return mid;}
+        else if(a[mid]>val){return b_search(a,n,l,mid-1,val);}
+        else{return b_search(a,n,mid+1,h,val);}
+    }
+    return -1;
+    
+    
+}
+int main() {
+    int arr[]={1,2,3,5,6};
+    int val=3;
+    int n=sizeof(arr)/sizeof(arr[0]);
+   int res= b_search(arr,n,0,n-1,val);
+   cout<<res<<endl;
+    
+    
+    return 0;
+}
